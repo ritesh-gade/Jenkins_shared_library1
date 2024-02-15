@@ -1,6 +1,6 @@
 def call(String dockerHubUsername, String imageName) {
     // Build the Docker image
-    sh "sudo docker -S build --build-arg REACT_APP_RAPID_API_KEY=8b7a50760fmshf2f98de1ba2ef54p17d3b6jsn48eda812fafa -t ${imageName} ."
+    sh "sudo docker build --build-arg REACT_APP_RAPID_API_KEY=8b7a50760fmshf2f98de1ba2ef54p17d3b6jsn48eda812fafa -t ${imageName} ."
      // Tag the Docker image
     sh "sudo docker tag ${imageName} ${dockerHubUsername}/${imageName}:latest"
     // Push the Docker image
