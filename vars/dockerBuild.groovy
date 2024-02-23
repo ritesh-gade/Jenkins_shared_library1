@@ -1,6 +1,6 @@
 def call(String dockerHubUsername, String imageName) {
     // Build the Docker image
-    sh "SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A docker build --build-arg REACT_APP_RAPID_API_KEY=8b7a50760fmshf2f98de1ba2ef54p17d3b6jsn48eda812fafa -t ${imageName} ."
+    sh "SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A -S docker build --build-arg REACT_APP_RAPID_API_KEY=8b7a50760fmshf2f98de1ba2ef54p17d3b6jsn48eda812fafa -t ${imageName} ."
      // Tag the Docker image
     sh "docker tag ${imageName} ${dockerHubUsername}/${imageName}:latest"
     // Push the Docker image
